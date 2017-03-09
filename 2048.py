@@ -80,7 +80,23 @@ def get_user_action(keyboard):
 
 
 def transpose(field):
+	
+	#最难理解
 	return [list(row) for row in zip(*field)]	#矩阵转置  ？？
+
+	#还可以  简化版
+	# return [[row[col] for row in field] for col in range(len(field[0]))]
+
+
+	#最简化版
+	# re 	=	[]
+	# for col in range(len(field[0])):
+	# 	ree 	=	[]
+	# 	for row in field:
+	# 		ree.append(row[col])
+	# 	re.append(ree)
+	# return re
+
 
 def invert(field):
 	return [row[::-1] for row in field]	#矩阵逆转 ？？    seq[start:end:step]   重开始到结束切片的间隔 负数只表示倒叙
@@ -99,11 +115,11 @@ def invert(field):
 
 #transpose  矩阵转置  定义A的转置为这样一个n×m阶矩阵B，满足B=a(j,i)，即 b (i,j)=a (j,i)（B的第i行第j列元素是A的第j行第i列元素），记A'=B。(有些书记为AT=B，这里T为A的上标）  大学数学知识
 
-	
 
-# l 	=	[(1, 1), (1, 2), (1, 3)]
+
+l 	=	[(1, 1), (1, 2), (1, 3)]
 # print(l)
-# # print(transpose(l))
+print(transpose(l))
 # print(invert(l))
 
 # print(randrange(1, 10, 3))
